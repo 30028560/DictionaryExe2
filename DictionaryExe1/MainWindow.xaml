@@ -1,0 +1,64 @@
+﻿<Window x:Class="DictionaryExe1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DictionaryExe1"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight"  
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"  
+        WindowStyle="None"  
+        AllowsTransparency="True"  
+        Background="Transparent">
+    <Canvas Width="603" Height="723" Name="RootLayout" >
+        <Path Stroke="AliceBlue" StrokeThickness="2" Name="UIPath" >
+            <Path.Fill>
+                <ImageBrush ImageSource="Images/beach.png" Opacity="0.7"/>
+            </Path.Fill>
+            <Path.Data>
+                <PathGeometry >
+                    <PathFigure StartPoint="0, 40">
+                        <ArcSegment Size="80,10" SweepDirection="Clockwise" Point="600,40" 
+                                    IsLargeArc="True" RotationAngle="0" />
+                        <LineSegment Point="360,400"/>
+                        <LineSegment Point="360,700"/>
+                        <ArcSegment Size="150,10"  IsLargeArc="True"  SweepDirection="Clockwise" 
+                                    Point="240,700" />
+                        <LineSegment Point="240,400"/>
+                        <LineSegment Point="0,40"/>
+                    </PathFigure>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <ListBox x:Name="DrinksListBox" Height="283" Canvas.Left="250" Canvas.Top="411" Width="100" 
+                 SelectionChanged="DrinksListBox_SelectionChanged" 
+                 MouseDoubleClick="DrinksListBox_MouseDoubleClick">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.2"/>
+            </ListBox.Background>
+        </ListBox>
+        <Button Height="20" Width="100" ToolTip="Click me to close the application." Name="CloseButton" 
+                Click="CloseButton_Click" Opacity="0.5" Canvas.Left="250" Canvas.Top="694" 
+                Content="Exit">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="ImageDrink" Height="245" Canvas.Left="225" Canvas.Top="117" Width="150" 
+               Source="Images/Empty Glass.png" RenderTransformOrigin="-0.031,-1.47" Stretch="Fill" 
+               Opacity="0.5">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="Images/Empty Glass.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <TextBox x:Name="TextBoxName" Height="43" Canvas.Left="250" TextWrapping="Wrap" 
+                 Canvas.Top="367" Width="100" Opacity="0.2" FontSize="14" 
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                 FontWeight="Bold" IsEnabled="False"/>
+        <TextBlock x:Name="TextBlockRecipe" Height="91" Canvas.Left="58" TextWrapping="Wrap" 
+                   Canvas.Top="24" Width="240" Opacity="0.2" FontSize="10" FontWeight="Bold"/>
+        <TextBlock x:Name="TextBlockMix" Height="91" Canvas.Left="302" TextWrapping="Wrap" 
+                   Canvas.Top="24" Width="240" Opacity="0.2" FontSize="10" FontWeight="Bold"/>
+    </Canvas>
+</Window>
+
